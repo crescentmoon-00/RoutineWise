@@ -1,5 +1,5 @@
 import { apiClient } from './api';
-import { ChildProfile, Routine, ActivityLog, Rule } from '../types';
+import { ChildProfile, Routine, ActivityLog, Rule } from '@/types';
 
 export const childService = {
   // Get all children for parent

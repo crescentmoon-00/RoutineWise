@@ -69,9 +69,11 @@ export default {
         "surface-tint": "#325f9e",
       },
       fontFamily: {
+        "sans": ["Lexend", "sans-serif"],
         "headline": ["Lexend", "sans-serif"],
         "body": ["Lexend", "sans-serif"],
         "label": ["Lexend", "sans-serif"],
+        "material-symbols": ["Material Symbols Outlined", "sans-serif"],
       },
       borderRadius: {
         "DEFAULT": "1rem",

@@ -13,6 +13,13 @@ const router = Router();
 router.use(auth);
 
 /**
+ * @route   GET /api/children
+ * @desc    Get all children for current user
+ * @access  Private
+ */
+router.get('/', childController.getChildren);
+
+/**
  * @route   POST /api/children
  * @desc    Create a new child profile
  * @access  Private
@@ -24,12 +31,6 @@ router.post(
   childController.createChild
 );
 
-/**
- * @route   GET /api/children
- * @desc    Get all children for current user
- * @access  Private
- */
-router.get('/', childController.getChildren);
 
 /**
  * @route   GET /api/children/:childId

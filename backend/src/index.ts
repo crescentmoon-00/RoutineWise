@@ -20,7 +20,10 @@ const PORT = process.env.PORT || 5000;
 let dbConnected = false;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:5173', 'http://localhost:3000', 'http://localhost:3001'],
+  credentials: true,
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -35,8 +38,8 @@ app.get('/api/health', (req, res) => {
 
 // API Routes
 app.use('/api/auth', authRoutes);
-app.use('/api', childRoutes);
-app.use('/api', routineRoutes);
+app.use('/api/children', childRoutes);
+app.use('/api/routines', routineRoutes);
 app.use('/api', activityLogRoutes);
 
 // 404 handler - must be after all routes

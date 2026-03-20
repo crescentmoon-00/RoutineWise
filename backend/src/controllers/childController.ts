@@ -62,6 +62,7 @@ export const createChild = async (req: Request, res: Response): Promise<void> =>
 export const getChildren = async (req: Request, res: Response): Promise<void> => {
   try {
     if (!req.user) {
+      console.log('No user in request');
       res.status(401).json({ error: 'Not authenticated' });
       return;
     }

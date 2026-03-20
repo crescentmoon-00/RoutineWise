@@ -6,8 +6,7 @@ import { hashPassword, comparePassword, generateToken, setTokenCookie, clearToke
  * Register a new user
  */
 export const register = async (req: Request, res: Response): Promise<void> => {
-  try {
-    const { email, password, firstName, lastName } = req.body;
+  try { const { email, password, firstName, lastName } = req.body;
 
     // Check if user already exists
     const existingUser = await User.findOne({ email });
@@ -41,7 +40,7 @@ export const register = async (req: Request, res: Response): Promise<void> => {
     res.status(201).json({
       message: 'User registered successfully',
       user: {
-        id: user._id,
+        _id: user._id,
         email: user.email,
         firstName: user.firstName,
         lastName: user.lastName,
@@ -89,7 +88,7 @@ export const login = async (req: Request, res: Response): Promise<void> => {
     res.status(200).json({
       message: 'Login successful',
       user: {
-        id: user._id,
+        _id: user._id,
         email: user.email,
         firstName: user.firstName,
         lastName: user.lastName,
