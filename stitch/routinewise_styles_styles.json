@@ -1,0 +1,105 @@
+{
+  "colors": {
+    "brand": {
+      "primary": "#2F5C9B",
+      "secondary": "#4A90E2",
+      "accent": "#1B5E20",
+      "surface": "#FAF8FF",
+      "tonal": "#F2F3FD"
+    },
+    "neutral": {
+      "background": "#FFFFFF",
+      "border": "#C1C7D3",
+      "surface_variant": "#F8F9FA"
+    },
+    "text": {
+      "heading": "#191B22",
+      "body": "#414751",
+      "muted": "#757575",
+      "on_primary": "#FFFFFF"
+    },
+    "semantic": {
+      "success": "#2E7D32",
+      "warning": "#FBC02D",
+      "error": "#D32F2F",
+      "info": "#0288D1"
+    }
+  },
+  "typography": {
+    "font_family": {
+      "sans": "Lexend, sans-serif"
+    },
+    "type_scale": {
+      "h1": {
+        "size": "32px",
+        "weight": "700",
+        "line_height": "1.2"
+      },
+      "h2": {
+        "size": "24px",
+        "weight": "600",
+        "line_height": "1.3"
+      },
+      "h3": {
+        "size": "20px",
+        "weight": "600",
+        "line_height": "1.4"
+      },
+      "body_lg": {
+        "size": "18px",
+        "weight": "400",
+        "line_height": "1.5"
+      },
+      "body": {
+        "size": "16px",
+        "weight": "400",
+        "line_height": "1.5"
+      },
+      "small": {
+        "size": "14px",
+        "weight": "500",
+        "line_height": "1.4"
+      }
+    }
+  },
+  "layout_spacing": {
+    "border_radius": {
+      "small": "8px",
+      "medium": "16px",
+      "large": "24px",
+      "full": "9999px"
+    },
+    "spacing_system": "airy",
+    "base_unit": "8px"
+  },
+  "effects": {
+    "box_shadows": {
+      "card": "0 4px 24px rgba(25, 27, 34, 0.06)",
+      "elevation_high": "0 10px 30px rgba(0, 0, 0, 0.1)"
+    },
+    "opacities": {
+      "backdrop": "0.8"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": {
+        "background": "#2F5C9B",
+        "text": "#FFFFFF",
+        "border_radius": "9999px",
+        "padding": "12px 24px"
+      }
+    },
+    "inputs": {
+      "background": "#F2F3FD",
+      "border_color": "transparent",
+      "border_radius": "12px",
+      "text_style": "Lexend 16px"
+    },
+    "cards": {
+      "background": "#FFFFFF",
+      "shadow": "0 4px 24px rgba(25, 27, 34, 0.06)",
+      "border_radius": "24px"
+    }
+  }
+}

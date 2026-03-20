@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RoutineWise Settings &amp; Accessibility</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface": "#faf8ff",
+              "on-primary": "#ffffff",
+              "surface-container": "#ededf7",
+              "on-secondary-container": "#1e713b",
+              "secondary": "#186c37",
+              "on-secondary-fixed-variant": "#005225",
+              "primary-fixed-dim": "#a9c8ff",
+              "on-primary-fixed": "#001b3d",
+              "surface-container-low": "#f2f3fd",
+              "primary-fixed": "#d6e3ff",
+              "primary": "#2f5c9b",
+              "on-secondary": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-container": "#966e00",
+              "on-secondary-fixed": "#00210b",
+              "outline-variant": "#c1c7d3",
+              "on-tertiary-container": "#fffbff",
+              "on-error": "#ffffff",
+              "tertiary-fixed": "#ffdea2",
+              "on-surface": "#191b22",
+              "on-error-container": "#93000a",
+              "surface-container-highest": "#e1e2ec",
+              "surface-tint": "#325f9e",
+              "on-tertiary": "#ffffff",
+              "tertiary-fixed-dim": "#f6be3c",
+              "on-tertiary-fixed": "#261900",
+              "surface-dim": "#d9d9e3",
+              "surface-container-high": "#e7e7f1",
+              "primary-container": "#4b75b6",
+              "on-primary-container": "#fefcff",
+              "on-background": "#191b22",
+              "error": "#ba1a1a",
+              "on-surface-variant": "#414751",
+              "inverse-surface": "#2e3038",
+              "tertiary": "#775700",
+              "secondary-container": "#a0f2af",
+              "on-tertiary-fixed-variant": "#5c4200",
+              "inverse-primary": "#a9c8ff",
+              "background": "#faf8ff",
+              "outline": "#717783",
+              "error-container": "#ffdad6",
+              "on-primary-fixed-variant": "#124684",
+              "secondary-fixed": "#a3f5b2",
+              "inverse-on-surface": "#f0f0fa",
+              "secondary-fixed-dim": "#87d898",
+              "surface-variant": "#e1e2ec",
+              "surface-bright": "#faf8ff"
+            },
+            fontFamily: {
+              "headline": ["Lexend"],
+              "body": ["Lexend"],
+              "label": ["Lexend"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Lexend', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- Desktop Navigation Shell -->
+<aside class="hidden md:flex h-screen w-64 fixed left-0 top-0 bg-[#faf8ff] dark:bg-slate-950 flex flex-col py-8 z-50">
+<div class="px-6 mb-8">
+<span class="text-xl font-bold text-[#2f5c9b]">RoutineWise</span>
+</div>
+<div class="flex-1 flex flex-col">
+<nav class="space-y-1">
+<a class="text-[#414751] dark:text-slate-400 px-4 py-3 mx-2 my-1 flex items-center gap-3 hover:bg-[#e7e7f1] rounded-full transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="text-[#414751] dark:text-slate-400 px-4 py-3 mx-2 my-1 flex items-center gap-3 hover:bg-[#e7e7f1] rounded-full transition-all" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span>Schedules</span>
+</a>
+<a class="text-[#414751] dark:text-slate-400 px-4 py-3 mx-2 my-1 flex items-center gap-3 hover:bg-[#e7e7f1] rounded-full transition-all" href="#">
+<span class="material-symbols-outlined">face</span>
+<span>Child Profiles</span>
+</a>
+<a class="bg-[#2f5c9b] text-white rounded-full mx-2 my-1 px-4 py-3 flex items-center gap-3" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-outline-variant/15 pt-4">
+<a class="text-[#414751] px-4 py-3 mx-2 my-1 flex items-center gap-3 hover:bg-[#e7e7f1] rounded-full transition-all" href="#">
+<span class="material-symbols-outlined">help</span>
+<span>Help</span>
+</a>
+<a class="text-[#414751] px-4 py-3 mx-2 my-1 flex items-center gap-3 hover:bg-[#e7e7f1] rounded-full transition-all text-error" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 min-h-screen bg-surface">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-40 bg-[#faf8ff] dark:bg-slate-950 flex justify-between items-center px-6 py-4 font-lexend tracking-tight">
+<div>
+<h1 class="text-2xl font-bold text-[#2f5c9b]">Settings</h1>
+<p class="text-on-surface-variant text-sm">Manage your portal and app experience</p>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-[#f2f3fd] transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed font-bold">
+                    JD
+                </div>
+</div>
+</header>
+<div class="max-w-4xl mx-auto px-6 py-8 pb-32">
+<!-- Accessibility Bento Grid -->
+<section class="mb-12">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="accessibility_new">accessibility_new</span>
+<h2 class="text-xl font-semibold text-on-surface">Accessibility &amp; Sensory</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- High Contrast Toggle -->
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10 flex items-center justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-medium text-on-surface">High Contrast Mode</span>
+<span class="text-sm text-on-surface-variant">Enhanced legibility for text and icons</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-14 h-8 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-1 after:start-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Minimal Animations Toggle -->
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10 flex items-center justify-between">
+<div class="flex flex-col gap-1">
+<span class="font-medium text-on-surface">Minimal Animations</span>
+<span class="text-sm text-on-surface-variant">Reduces sensory load and visual motion</span>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-14 h-8 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-1 after:start-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Text Size Slider Card -->
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10 md:col-span-2">
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-center">
+<span class="font-medium text-on-surface">Interface Scale</span>
+<span class="text-primary font-bold">110%</span>
+</div>
+<input class="w-full h-2 bg-surface-container-high rounded-lg appearance-none cursor-pointer accent-primary" max="100" min="1" type="range" value="60"/>
+<div class="flex justify-between text-xs text-on-surface-variant px-1">
+<span>Compact</span>
+<span>Default</span>
+<span>Accessible</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Notifications Section -->
+<section class="mb-12">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="notifications_active">notifications_active</span>
+<h2 class="text-xl font-semibold text-on-surface">Notification Preferences</h2>
+</div>
+<div class="bg-surface-container-low rounded-lg p-1">
+<div class="bg-surface-container-lowest rounded-lg p-2 space-y-1">
+<div class="flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors rounded-lg">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined">check_circle</span>
+</div>
+<div class="flex flex-col">
+<span class="font-medium">Routine Completions</span>
+<span class="text-sm text-on-surface-variant">Get alerted when a child completes a task</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors rounded-lg">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed-dim flex items-center justify-center text-on-tertiary-fixed-variant">
+<span class="material-symbols-outlined">medical_services</span>
+</div>
+<div class="flex flex-col">
+<span class="font-medium">Medication Reminders</span>
+<span class="text-sm text-on-surface-variant">Critical alerts for timing and dosage</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+<div class="flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors rounded-lg">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed-variant">
+<span class="material-symbols-outlined">forum</span>
+</div>
+<div class="flex flex-col">
+<span class="font-medium">Community Updates</span>
+<span class="text-sm text-on-surface-variant">News and tips from the neurodiversity blog</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</label>
+</div>
+</div>
+</div>
+</section>
+<!-- Account Management -->
+<section class="mb-12">
+<div class="flex items-center gap-2 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="manage_accounts">manage_accounts</span>
+<h2 class="text-xl font-semibold text-on-surface">Account Management</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10 md:col-span-2">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-16 h-16 rounded-full overflow-hidden bg-primary-container">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Portrait of a smiling woman profile picture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvnCdIvFb3hjqSHjfQq2O-DSk5L4tUgeb2IDzg7ONC_jGl7A4kOv0Af9S1nM-Dntn-OzsJBsjXarYANs_uBcUXyJQOsZyHwm00MCQbY8ipUIKYBKV9qEMdkPJ6cNxsNInFUyaaoDseOFoxNzgF8M6IYKQWyJbAtSiqLv2HKyjCyGzNzMUY5tvGUWeo9dUHW25NTx2NISxU37_e-Akpw1cSvUjncKmTEofufJ69hjMfzkHk6JDrFeFWK3B-s0Wv6mSrzgFVt57mQ-o"/>
+</div>
+<div>
+<h3 class="font-bold text-lg">Jane Doe</h3>
+<p class="text-on-surface-variant">jane.doe@example.com</p>
+</div>
+<button class="ml-auto p-2 rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+<div class="space-y-4">
+<div class="flex flex-col gap-1">
+<label class="text-xs font-bold text-on-surface-variant uppercase tracking-wider">Subscription Plan</label>
+<div class="flex items-center justify-between">
+<span class="font-medium">RoutineWise Premium</span>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold">ACTIVE</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm border border-outline-variant/10 flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-error mb-2" data-icon="security">security</span>
+<h3 class="font-bold mb-1">Security</h3>
+<p class="text-sm text-on-surface-variant">Update password and manage 2FA settings.</p>
+</div>
+<button class="mt-4 text-primary font-semibold text-sm text-left hover:underline">Manage Security</button>
+</div>
+</div>
+</section>
+<!-- Support Footer -->
+<div class="bg-primary-container/10 p-8 rounded-lg flex flex-col md:flex-row items-center justify-between gap-6 border border-primary-container/20">
+<div class="text-center md:text-left">
+<h4 class="font-bold text-lg text-primary">Need more help?</h4>
+<p class="text-on-surface-variant">Our support team is specialized in neuro-inclusive setup.</p>
+</div>
+<button class="bg-primary text-white px-8 py-4 rounded-full font-bold shadow-lg hover:shadow-primary/20 transition-all active:scale-95">
+                    Contact Support
+                </button>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-6 pb-6 pt-2 bg-[#faf8ff]/80 dark:bg-slate-950/80 backdrop-blur-xl border-t border-[#c1c7d3]/15 z-50">
+<a class="flex flex-col items-center justify-center text-[#414751] py-4 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-lexend text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#414751] py-4 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">edit_calendar</span>
+<span class="font-lexend text-[10px] font-medium">Edit</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#414751] py-4 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-lexend text-[10px] font-medium">Profiles</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#2f5c9b] text-white rounded-full w-14 h-14 -mt-10 shadow-lg shadow-blue-900/20 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined">settings_accessibility</span>
+<span class="font-lexend text-[10px] font-medium">Settings</span>
+</a>
+</nav>
+</body></html>

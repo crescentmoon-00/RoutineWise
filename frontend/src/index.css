@@ -1,0 +1,154 @@
+/* Import Lexend Font */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Import Material Symbols Outlined */
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Base styles */
+  body {
+    @apply bg-surface text-on-surface font-body;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Material Symbols Outlined */
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  }
+
+  .material-symbols-outlined.filled {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+
+  /* Custom scrollbar */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-outline-variant rounded-lg;
+  }
+
+  /* Glassmorphism */
+  .glass {
+    @apply backdrop-blur-glass;
+  }
+
+  /* Fade and scale transition (no Material ripples) */
+  .fade-scale {
+    transition-property: opacity, transform;
+    transition-duration: 150ms;
+  }
+
+  .fade-scale:active {
+    @apply opacity-80 scale-95;
+  }
+
+  /* No-line rule enforcement */
+  .no-border {
+    @apply border-none;
+  }
+}
+
+@layer components {
+  /* Button Component - Big Touch */
+  .btn-primary {
+    @apply bg-primary text-on-primary rounded-full min-h-[3rem] px-6 font-bold shadow-lg transition-all active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-surface-container-high text-on-surface rounded-full min-h-[3rem] px-6 font-semibold hover:bg-surface-container-highest transition-all active:scale-95;
+  }
+
+  /* Card Component */
+  .card {
+    @apply bg-surface-container-lowest rounded-DEFAULT shadow-card hover:shadow-elevation-high transition-shadow;
+  }
+
+  .card-lg {
+    @apply bg-surface-container-lowest rounded-lg shadow-card hover:shadow-elevation-high transition-shadow;
+  }
+
+  .card-xl {
+    @apply bg-surface-container-lowest rounded-xl shadow-card hover:shadow-elevation-high transition-shadow;
+  }
+
+  .card-child {
+    @apply bg-surface-container-lowest rounded-xl shadow-floating hover:shadow-elevation-high transition-shadow;
+  }
+
+  /* Input Component */
+  .input-field {
+    @apply w-full bg-surface-container-high rounded-xl text-on-surface placeholder:text-outline focus:bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary transition-all;
+  }
+
+  /* Semantic Chips */
+  .chip-health {
+    @apply bg-tertiary-fixed-dim text-on-tertiary-fixed-variant px-3 py-1 rounded-full text-xs font-bold uppercase;
+  }
+
+  .chip-school {
+    @apply bg-primary-fixed-dim text-on-primary-fixed-variant px-3 py-1 rounded-full text-xs font-bold uppercase;
+  }
+
+  .chip-chore {
+    @apply bg-secondary-fixed-dim text-on-secondary-fixed-variant px-3 py-1 rounded-full text-xs font-bold uppercase;
+  }
+
+  /* Navigation Components */
+  .nav-item {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl transition-all active:scale-98;
+  }
+
+  .nav-item-active {
+    @apply bg-surface-container-lowest text-primary font-semibold shadow-sm;
+  }
+
+  .nav-item-inactive {
+    @apply text-on-surface-variant hover:bg-surface-container-lowest/50;
+  }
+}
+
+@layer utilities {
+  /* Animation utilities */
+  @keyframes confetti {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+  }
+
+  .animate-confetti {
+    animation: confetti 3s ease-out forwards;
+  }
+
+  /* Surface nesting utility */
+  .surface-nest {
+    @apply bg-surface-container-lowest rounded-lg shadow-sm;
+  }
+}

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RoutineWise | Parent Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface-variant": "#414751",
+                        "surface-bright": "#faf8ff",
+                        "primary-fixed": "#d6e3ff",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c1c7d3",
+                        "surface-container-high": "#e7e7f1",
+                        "primary-fixed-dim": "#a9c8ff",
+                        "tertiary-fixed": "#ffdea2",
+                        "secondary-container": "#a0f2af",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#2f5c9b",
+                        "secondary-fixed": "#a3f5b2",
+                        "on-error": "#ffffff",
+                        "on-background": "#191b22",
+                        "on-primary-fixed-variant": "#124684",
+                        "on-primary-fixed": "#001b3d",
+                        "tertiary": "#775700",
+                        "outline": "#717783",
+                        "inverse-primary": "#a9c8ff",
+                        "background": "#faf8ff",
+                        "on-primary-container": "#fefcff",
+                        "secondary-fixed-dim": "#87d898",
+                        "surface-container-highest": "#e1e2ec",
+                        "inverse-on-surface": "#f0f0fa",
+                        "on-secondary-fixed": "#00210b",
+                        "on-secondary-container": "#1e713b",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#ededf7",
+                        "on-tertiary-fixed-variant": "#5c4200",
+                        "surface-dim": "#d9d9e3",
+                        "secondary": "#186c37",
+                        "inverse-surface": "#2e3038",
+                        "surface-tint": "#325f9e",
+                        "on-secondary-fixed-variant": "#005225",
+                        "tertiary-fixed-dim": "#f6be3c",
+                        "on-tertiary-container": "#fffbff",
+                        "on-tertiary-fixed": "#261900",
+                        "primary-container": "#4b75b6",
+                        "surface-container-low": "#f2f3fd",
+                        "surface": "#faf8ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#191b22",
+                        "surface-variant": "#e1e2ec",
+                        "tertiary-container": "#966e00",
+                        "on-primary": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Lexend"],
+                        "body": ["Lexend"],
+                        "label": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body { font-family: 'Lexend', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col md:flex-row overflow-x-hidden">
+<!-- SideNavBar (Desktop) -->
+<aside class="hidden md:flex flex-col h-screen w-64 bg-[#faf8ff] dark:bg-slate-950 p-4 fixed left-0 top-0 z-40">
+<div class="mb-10 px-2">
+<h1 class="text-xl font-black text-[#2f5c9b]">RoutineWise</h1>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-bold opacity-60 mt-1">Parent Portal</p>
+</div>
+<nav class="flex-1 space-y-2">
+<!-- Active: Dashboard -->
+<a class="flex items-center gap-3 px-4 py-3 bg-[#ffffff] dark:bg-slate-800 text-[#2f5c9b] font-semibold rounded-xl shadow-sm transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-lexend text-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#414751] dark:text-slate-400 hover:bg-[#ffffff]/50 transition-colors rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-lexend text-sm">Schedule</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#414751] dark:text-slate-400 hover:bg-[#ffffff]/50 transition-colors rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="rule">rule</span>
+<span class="font-lexend text-sm">Rules</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#414751] dark:text-slate-400 hover:bg-[#ffffff]/50 transition-colors rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="assignment_turned_in">assignment_turned_in</span>
+<span class="font-lexend text-sm">Tracker</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#414751] dark:text-slate-400 hover:bg-[#ffffff]/50 transition-colors rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-lexend text-sm">Settings</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-outline-variant/10">
+<button class="w-full bg-primary text-on-primary py-4 px-4 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                Add New Activity
+            </button>
+</div>
+</aside>
+<!-- TopAppBar (Mobile/Tablet and Global Header) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#faf8ff] dark:bg-slate-950/80 backdrop-blur-xl md:pl-72">
+<div class="flex items-center gap-4">
+<div class="md:hidden">
+<h1 class="text-2xl font-bold tracking-tight text-[#2f5c9b]">RoutineWise</h1>
+</div>
+<!-- Profile Switcher Inset -->
+<div class="flex items-center bg-surface-container-high rounded-full px-3 py-1.5 gap-2 cursor-pointer hover:bg-surface-container-highest transition-colors">
+<img alt="Child Profile Selector" class="w-7 h-7 rounded-full object-cover" data-alt="Portrait of a smiling young child" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFZs1orJ28G_LIYquo-PyzWg2bnyzGS1_3f9fudViQn6DDPDF7uyz7M1AJZELUtIs38REwUYJG3UD9rMWgNnr8zt9zyNyf-3KBExoSW_cKUnokny8Zp4AStUz-2pGh8ZAszlXRR8ofRofjvtrceV9RjZvG99R_SyQQ9QhqoVwGrI2sCUOGqHw4v7dJMqCLtx0sBokRP_yKREOdWwiEcnfHKnGwRrAlM3xYXtPVQCjxOLRm-5AHcubjVMj786I0z5QL0kDMz7QXKoc"/>
+<span class="text-xs font-bold text-on-surface">Leo's Portal</span>
+<span class="material-symbols-outlined text-xs" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-[#f2f3fd] transition-colors">
+<span class="material-symbols-outlined text-[#2f5c9b]" data-icon="notifications">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full overflow-hidden">
+<img alt="Parent Profile Switcher" class="w-full h-full object-cover" data-alt="Portrait of a smiling professional woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiwdbIHe-s1xgP7fzm2dzC-k2hytUF8t24zg5zRQM-DF9yx-qVprnHtih-bW9sb14jJh3I9KWnREz9yq9YIPQuyPKw6RWiLlOQ6WdaFHM5AiAk63Kp0HDYxspEqST7-71QELAAcAY8UtzcWCuMRqt9Du-k1zy4inutmAYPa7hMfN49mo8JIegLPkrMN3MXlj0yjmxuVdniWw6tWK8dnqBIMwNJmKRTn9SZKs1uTmkwR1FOLe1MRF3vqLXXjehvro94EB4YoNlfns8"/>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 pt-24 pb-32 md:pb-12 md:pl-72 px-6">
+<div class="max-w-6xl mx-auto space-y-8">
+<!-- Hero Header Section -->
+<header class="space-y-1">
+<p class="text-on-surface-variant font-medium text-sm">Good morning, Sarah</p>
+<h2 class="text-3xl font-extrabold text-on-surface tracking-tight">Today at a Glance</h2>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Adherence Summary Card -->
+<section class="md:col-span-8 bg-surface-container-low p-8 rounded-lg flex flex-col justify-between min-h-[320px]">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-bold text-on-surface">Schedule Adherence</h3>
+<p class="text-on-surface-variant text-sm mt-1">Leo is following 85% of his routines today.</p>
+</div>
+<div class="bg-secondary-container text-on-secondary-container px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest">
+                            On Track
+                        </div>
+</div>
+<div class="mt-8 flex flex-col md:flex-row items-end gap-8">
+<div class="flex-1 w-full space-y-4">
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-bold text-on-surface-variant">
+<span>Morning Routine</span>
+<span>100%</span>
+</div>
+<div class="h-3 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-full"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-bold text-on-surface-variant">
+<span>School Prep</span>
+<span>70%</span>
+</div>
+<div class="h-3 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary w-[70%]"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-xs font-bold text-on-surface-variant">
+<span>Afternoon Wind-down</span>
+<span>Pending</span>
+</div>
+<div class="h-3 w-full bg-surface-container-highest rounded-full"></div>
+</div>
+</div>
+<!-- Mini Circular Progress -->
+<div class="relative w-32 h-32 flex items-center justify-center">
+<svg class="w-full h-full transform -rotate-90">
+<circle class="text-surface-container-highest" cx="64" cy="64" fill="transparent" r="56" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-primary" cx="64" cy="64" fill="transparent" r="56" stroke="currentColor" stroke-dasharray="351.8" stroke-dashoffset="52.7" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-2xl font-black text-on-surface">12/14</span>
+<span class="text-[10px] font-bold text-on-surface-variant">TASKS</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Current Task Focus -->
+<section class="md:col-span-4 bg-primary text-on-primary p-8 rounded-lg flex flex-col justify-between">
+<div class="space-y-4">
+<div class="w-12 h-12 bg-on-primary/10 rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl" data-icon="timer">timer</span>
+</div>
+<h3 class="text-lg font-bold">Active Task</h3>
+<p class="text-on-primary/80 text-sm leading-relaxed">Leo is currently working on: <strong>Math Homework Blocks</strong></p>
+</div>
+<div class="mt-8">
+<div class="text-4xl font-black tracking-tighter">18:42</div>
+<p class="text-xs font-medium text-on-primary/60 mt-1">Remaining in session</p>
+<button class="mt-6 w-full py-3 bg-on-primary text-primary font-bold rounded-xl text-sm transition-transform active:scale-95">
+                            Nudge for Break
+                        </button>
+</div>
+</section>
+<!-- Recent Logs Bento Section -->
+<section class="md:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Sleep Log -->
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="bedtime">bedtime</span>
+<h4 class="font-bold text-on-surface">Sleep Quality</h4>
+</div>
+<div class="space-y-1">
+<span class="text-2xl font-black text-on-surface">8h 12m</span>
+<p class="text-xs text-secondary font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+                                +45m from yesterday
+                            </p>
+</div>
+<div class="flex gap-1 h-8 items-end">
+<div class="flex-1 bg-primary-fixed-dim rounded-t-sm h-1/2"></div>
+<div class="flex-1 bg-primary-fixed-dim rounded-t-sm h-3/4"></div>
+<div class="flex-1 bg-primary-fixed-dim rounded-t-sm h-2/3"></div>
+<div class="flex-1 bg-primary rounded-t-sm h-full"></div>
+</div>
+</div>
+<!-- Mood Tracker -->
+<div class="bg-surface-container-lowest p-6 rounded-lg shadow-sm flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary-fixed-dim" data-icon="mood" style="font-variation-settings: 'FILL' 1;">mood</span>
+<h4 class="font-bold text-on-surface">Daily Mood</h4>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-tertiary-fixed rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-fixed-variant" data-icon="sentiment_satisfied">sentiment_satisfied</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Generally Positive</p>
+<p class="text-xs text-on-surface-variant">Last update: 2h ago</p>
+</div>
+</div>
+<div class="mt-2 flex gap-2">
+<span class="bg-surface-container-high text-[10px] font-bold px-2 py-1 rounded">Focus: High</span>
+<span class="bg-surface-container-high text-[10px] font-bold px-2 py-1 rounded">Energy: Calm</span>
+</div>
+</div>
+<!-- Quick Logs/CTA -->
+<div class="bg-surface-container-high p-6 rounded-lg flex flex-col justify-center items-center text-center gap-4 border-2 border-dashed border-outline-variant/30">
+<div class="w-12 h-12 bg-surface-container-lowest rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary" data-icon="edit_note">edit_note</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Add Entry</h4>
+<p class="text-xs text-on-surface-variant max-w-[150px] mx-auto">Log a new observation or routine change.</p>
+</div>
+<button class="text-primary font-black text-sm hover:underline">Launch Log Editor</button>
+</div>
+</section>
+<!-- Upcoming Schedule (Asymmetric Column) -->
+<section class="md:col-span-12 bg-surface-container-low p-8 rounded-lg">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-xl font-bold text-on-surface">Next Events</h3>
+<button class="text-sm font-bold text-primary flex items-center gap-1">
+                            Full Calendar
+                            <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="space-y-3">
+<!-- Schedule Item -->
+<div class="flex items-center bg-surface-container-lowest p-4 rounded-xl gap-4 group hover:shadow-md transition-shadow">
+<div class="w-16 text-center border-r border-outline-variant/20 pr-4">
+<p class="text-xs font-bold text-on-surface-variant uppercase">3:00</p>
+<p class="text-[10px] font-medium text-outline">PM</p>
+</div>
+<div class="flex-1">
+<h5 class="text-sm font-bold text-on-surface">Physical Therapy</h5>
+<p class="text-xs text-on-surface-variant">St. Mary’s Wellness Center</p>
+</div>
+<div class="flex gap-2">
+<span class="bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-bold px-3 py-1 rounded-full">Leo</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed-variant text-[10px] font-bold px-3 py-1 rounded-full">Health</span>
+</div>
+</div>
+<!-- Schedule Item -->
+<div class="flex items-center bg-surface-container-lowest p-4 rounded-xl gap-4 group hover:shadow-md transition-shadow opacity-70">
+<div class="w-16 text-center border-r border-outline-variant/20 pr-4">
+<p class="text-xs font-bold text-on-surface-variant uppercase">5:30</p>
+<p class="text-[10px] font-medium text-outline">PM</p>
+</div>
+<div class="flex-1">
+<h5 class="text-sm font-bold text-on-surface">Evening Shower</h5>
+<p class="text-xs text-on-surface-variant">Step-by-step visual routine</p>
+</div>
+<div class="flex gap-2">
+<span class="bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-bold px-3 py-1 rounded-full">Leo</span>
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant text-[10px] font-bold px-3 py-1 rounded-full">Routine</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 h-20 bg-[#ffffff]/80 dark:bg-slate-900/80 backdrop-blur-2xl rounded-t-[3rem] shadow-[0_-4px_24px_0_rgba(25,27,34,0.06)]">
+<a class="flex flex-col items-center justify-center bg-[#2f5c9b] text-white rounded-full w-14 h-14 -mt-6 shadow-lg transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[8px] font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#414751] dark:text-slate-400 active:opacity-80 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="event_repeat">event_repeat</span>
+<span class="font-lexend text-[11px] font-medium tracking-wide">Schedule</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#414751] dark:text-slate-400 active:opacity-80 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+<span class="font-lexend text-[11px] font-medium tracking-wide">Log</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#414751] dark:text-slate-400 active:opacity-80 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="child_care">child_care</span>
+<span class="font-lexend text-[11px] font-medium tracking-wide">Child View</span>
+</a>
+</nav>
+<!-- Contextual FAB (Only on Home/Dashboard) -->
+<button class="fixed bottom-24 right-6 md:bottom-8 md:right-8 w-16 h-16 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center z-40 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</button>
+</body></html>

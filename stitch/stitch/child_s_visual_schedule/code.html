@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My Schedule - RoutineWise</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-surface-variant": "#414751",
+                        "surface-bright": "#faf8ff",
+                        "primary-fixed": "#d6e3ff",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c1c7d3",
+                        "surface-container-high": "#e7e7f1",
+                        "primary-fixed-dim": "#a9c8ff",
+                        "tertiary-fixed": "#ffdea2",
+                        "secondary-container": "#a0f2af",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#2f5c9b",
+                        "secondary-fixed": "#a3f5b2",
+                        "on-error": "#ffffff",
+                        "on-background": "#191b22",
+                        "on-primary-fixed-variant": "#124684",
+                        "on-primary-fixed": "#001b3d",
+                        "tertiary": "#775700",
+                        "outline": "#717783",
+                        "inverse-primary": "#a9c8ff",
+                        "background": "#faf8ff",
+                        "on-primary-container": "#fefcff",
+                        "secondary-fixed-dim": "#87d898",
+                        "surface-container-highest": "#e1e2ec",
+                        "inverse-on-surface": "#f0f0fa",
+                        "on-secondary-fixed": "#00210b",
+                        "on-secondary-container": "#1e713b",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#ededf7",
+                        "on-tertiary-fixed-variant": "#5c4200",
+                        "surface-dim": "#d9d9e3",
+                        "secondary": "#186c37",
+                        "inverse-surface": "#2e3038",
+                        "surface-tint": "#325f9e",
+                        "on-secondary-fixed-variant": "#005225",
+                        "tertiary-fixed-dim": "#f6be3c",
+                        "on-tertiary-container": "#fffbff",
+                        "on-tertiary-fixed": "#261900",
+                        "primary-container": "#4b75b6",
+                        "surface-container-low": "#f2f3fd",
+                        "surface": "#faf8ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#191b22",
+                        "surface-variant": "#e1e2ec",
+                        "tertiary-container": "#966e00",
+                        "on-primary": "#ffffff"
+                    },
+                    fontFamily: {
+                        "headline": ["Lexend"],
+                        "body": ["Lexend"],
+                        "label": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed overflow-hidden">
+<!-- Top Navigation Bar (Mobile Logic - Suppression of SideNav for Child View) -->
+<header class="fixed top-0 w-full flex justify-between items-center px-6 h-20 bg-[#faf8ff] dark:bg-slate-950/80 backdrop-blur-xl z-50">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed-dim flex items-center justify-center text-on-secondary-fixed-variant">
+<span class="material-symbols-outlined text-3xl filled-icon" data-icon="face_6">face_6</span>
+</div>
+<div>
+<h1 class="text-2xl font-black tracking-tight text-[#2f5c9b] font-headline">Alex's Day</h1>
+<p class="text-on-surface-variant text-sm font-medium">Monday, June 12</p>
+</div>
+</div>
+<button class="w-14 h-14 rounded-xl bg-surface-container-high flex items-center justify-center text-primary active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="settings">settings</span>
+</button>
+</header>
+<!-- Visual Timeline Container -->
+<main class="h-screen pt-24 pb-32 px-4 md:px-8 overflow-x-auto overflow-y-hidden flex items-center hide-scrollbar gap-8 snap-x snap-mandatory">
+<!-- Current Task Highlight (Active) -->
+<div class="flex-none w-[85vw] md:w-[600px] h-[665px] snap-center">
+<div class="relative h-full w-full bg-surface-container-lowest rounded-xl shadow-[0_20px_50px_rgba(47,92,155,0.1)] flex flex-col p-8 transition-all duration-300">
+<!-- Status Badge -->
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white px-8 py-2 rounded-full font-bold text-lg shadow-lg">
+                    Current Task
+                </div>
+<div class="flex-1 flex flex-col items-center justify-center text-center space-y-8">
+<div class="w-48 h-48 md:w-64 md:h-64 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[120px] md:text-[160px] text-primary filled-icon" data-icon="brush">brush</span>
+</div>
+<div class="space-y-2">
+<h2 class="text-4xl md:text-6xl font-black text-on-surface">Brush Teeth</h2>
+<p class="text-xl text-on-surface-variant font-medium">2 minutes left</p>
+</div>
+</div>
+<button class="w-full py-6 bg-secondary text-white rounded-xl text-2xl font-bold flex items-center justify-center gap-3 active:scale-[0.98] transition-all shadow-md">
+<span class="material-symbols-outlined text-4xl" data-icon="check_circle">check_circle</span>
+                    I'm Done!
+                </button>
+</div>
+</div>
+<!-- Next Task -->
+<div class="flex-none w-[75vw] md:w-[450px] h-[563px] snap-center opacity-60 scale-95 grayscale-[0.3]">
+<div class="h-full w-full bg-surface-container-low rounded-xl flex flex-col p-8 border-2 border-dashed border-outline-variant">
+<div class="flex-1 flex flex-col items-center justify-center text-center space-y-6">
+<div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-[80px] text-on-surface-variant" data-icon="backpack">backpack</span>
+</div>
+<div class="space-y-1">
+<h3 class="text-3xl font-bold text-on-surface">Pack Bag</h3>
+<p class="text-lg text-on-surface-variant">Starts at 8:15 AM</p>
+</div>
+</div>
+<div class="w-full py-5 bg-surface-container-high text-on-surface-variant rounded-xl text-xl font-bold text-center">
+                    Next
+                </div>
+</div>
+</div>
+<!-- Future Task -->
+<div class="flex-none w-[75vw] md:w-[450px] h-[563px] snap-center opacity-40 scale-90 grayscale">
+<div class="h-full w-full bg-surface-container-low rounded-xl flex flex-col p-8 border-2 border-dashed border-outline-variant">
+<div class="flex-1 flex flex-col items-center justify-center text-center space-y-6">
+<div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-[80px] text-on-surface-variant" data-icon="directions_bus">directions_bus</span>
+</div>
+<div class="space-y-1">
+<h3 class="text-3xl font-bold text-on-surface">Catch Bus</h3>
+<p class="text-lg text-on-surface-variant">Starts at 8:30 AM</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Horizontal Progress Path (Tonal Sculpting) -->
+<div class="fixed bottom-24 left-0 w-full px-8 flex justify-center items-center gap-2">
+<div class="h-3 w-12 bg-secondary rounded-full"></div>
+<div class="h-3 w-3 bg-outline-variant rounded-full"></div>
+<div class="h-3 w-3 bg-outline-variant rounded-full"></div>
+<div class="h-3 w-3 bg-outline-variant rounded-full"></div>
+<div class="h-3 w-3 bg-outline-variant rounded-full"></div>
+</div>
+<!-- Bottom Navigation Bar (Contextual for Child View) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 h-20 bg-[#ffffff]/80 dark:bg-slate-900/80 backdrop-blur-2xl shadow-[0_-4px_24px_0_rgba(25,27,34,0.06)] rounded-t-[3rem]">
+<!-- Home -->
+<button class="flex flex-col items-center justify-center text-[#414751] dark:text-slate-400 active:opacity-80 transition-transform scale-90 duration-150">
+<span class="material-symbols-outlined text-3xl" data-icon="home">home</span>
+<span class="font-lexend text-[11px] font-medium tracking-wide">Home</span>
+</button>
+<!-- Active: Schedule (Using child intent) -->
+<button class="flex flex-col items-center justify-center bg-[#2f5c9b] text-white rounded-full w-16 h-16 -mt-10 shadow-lg active:opacity-80 transition-transform scale-100 duration-150">
+<span class="material-symbols-outlined text-4xl filled-icon" data-icon="event_repeat">event_repeat</span>
+</button>
+<!-- Log/Tracker -->
+<button class="flex flex-col items-center justify-center text-[#414751] dark:text-slate-400 active:opacity-80 transition-transform scale-90 duration-150">
+<span class="material-symbols-outlined text-3xl" data-icon="edit_note">edit_note</span>
+<span class="font-lexend text-[11px] font-medium tracking-wide">Log</span>
+</button>
+<!-- Parent Switch -->
+<button class="flex flex-col items-center justify-center text-[#414751] dark:text-slate-400 active:opacity-80 transition-transform scale-90 duration-150">
+<span class="material-symbols-outlined text-3xl" data-icon="lock">lock</span>
+<span class="font-lexend text-[11px] font-medium tracking-wide">Parent</span>
+</button>
+</nav>
+<!-- Subtle Texture Background Overlay -->
+<div class="fixed inset-0 pointer-events-none opacity-[0.03] z-[-1] overflow-hidden">
+<div class="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary rounded-full blur-[100px]"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-secondary rounded-full blur-[100px]"></div>
+</div>
+</body></html>

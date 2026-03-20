@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Smart Rule Builder - RoutineWise</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#414751",
+              "surface-bright": "#faf8ff",
+              "primary-fixed": "#d6e3ff",
+              "error": "#ba1a1a",
+              "on-error-container": "#93000a",
+              "error-container": "#ffdad6",
+              "outline-variant": "#c1c7d3",
+              "surface-container-high": "#e7e7f1",
+              "primary-fixed-dim": "#a9c8ff",
+              "tertiary-fixed": "#ffdea2",
+              "secondary-container": "#a0f2af",
+              "on-tertiary": "#ffffff",
+              "primary": "#2f5c9b",
+              "secondary-fixed": "#a3f5b2",
+              "on-error": "#ffffff",
+              "on-background": "#191b22",
+              "on-primary-fixed-variant": "#124684",
+              "on-primary-fixed": "#001b3d",
+              "tertiary": "#775700",
+              "outline": "#717783",
+              "inverse-primary": "#a9c8ff",
+              "background": "#faf8ff",
+              "on-primary-container": "#fefcff",
+              "secondary-fixed-dim": "#87d898",
+              "surface-container-highest": "#e1e2ec",
+              "inverse-on-surface": "#f0f0fa",
+              "on-secondary-fixed": "#00210b",
+              "on-secondary-container": "#1e713b",
+              "on-secondary": "#ffffff",
+              "surface-container": "#ededf7",
+              "on-tertiary-fixed-variant": "#5c4200",
+              "surface-dim": "#d9d9e3",
+              "secondary": "#186c37",
+              "inverse-surface": "#2e3038",
+              "surface-tint": "#325f9e",
+              "on-secondary-fixed-variant": "#005225",
+              "tertiary-fixed-dim": "#f6be3c",
+              "on-tertiary-container": "#fffbff",
+              "on-tertiary-fixed": "#261900",
+              "primary-container": "#4b75b6",
+              "surface-container-low": "#f2f3fd",
+              "surface": "#faf8ff",
+              "surface-container-lowest": "#ffffff",
+              "on-surface": "#191b22",
+              "surface-variant": "#e1e2ec",
+              "tertiary-container": "#966e00",
+              "on-primary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Lexend"],
+              "body": ["Lexend"],
+              "label": ["Lexend"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        font-family: 'Lexend', sans-serif;
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex">
+<!-- SideNavBar (Execution from JSON) -->
+<aside class="hidden md:flex flex-col h-screen w-64 p-4 bg-[#faf8ff] dark:bg-slate-950 border-r-0 fixed left-0 top-0 z-40">
+<div class="mb-10 px-2">
+<h1 class="text-xl font-black text-[#2f5c9b]">RoutineWise</h1>
+<p class="text-xs text-on-surface-variant">Parent Portal</p>
+</div>
+<nav class="flex-1 space-y-2">
+<!-- Dashboard -->
+<a class="flex items-center gap-3 px-4 py-3 text-[#414751] dark:text-slate-400 hover:bg-[#ffffff]/50 dark:hover:bg-slate-800/50 transition-colors rounded-xl font-lexend text-sm" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<!-- Schedule -->
+<a class="flex items-center gap-3 px-4 py-3 text-[#414751] dark:text-slate-400 hover:bg-[#ffffff]/50 dark:hover:bg-slate-800/50 transition-colors rounded-xl font-lexend text-sm" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span>Schedule</span>
+</a>
+<!-- Rules (ACTIVE STATE) -->
+<a class="flex items-center gap-3 px-4 py-3 bg-[#ffffff] dark:bg-slate-800 text-[#2f5c9b] font-semibold rounded-xl shadow-sm font-lexend text-sm" href="#">
+<span class="material-symbols-outlined">rule</span>
+<span>Rules</span>
+</a>
+<!-- Tracker -->
+<a class="flex items-center gap-3 px-4 py-3 text-[#414751] dark:text-slate-400 hover:bg-[#ffffff]/50 dark:hover:bg-slate-800/50 transition-colors rounded-xl font-lexend text-sm" href="#">
+<span class="material-symbols-outlined">assignment_turned_in</span>
+<span>Tracker</span>
+</a>
+<!-- Settings -->
+<a class="flex items-center gap-3 px-4 py-3 text-[#414751] dark:text-slate-400 hover:bg-[#ffffff]/50 dark:hover:bg-slate-800/50 transition-colors rounded-xl font-lexend text-sm" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<button class="mt-auto bg-primary text-on-primary py-4 px-6 rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">add</span>
+<span>Add New Activity</span>
+</button>
+</aside>
+<!-- Main Canvas -->
+<main class="flex-1 md:ml-64 pb-24 md:pb-8">
+<!-- TopAppBar (Execution from JSON) -->
+<header class="fixed top-0 right-0 left-0 md:left-64 h-16 px-6 bg-[#faf8ff] dark:bg-slate-950/80 backdrop-blur-xl z-30 flex justify-between items-center no-border tonal-shift">
+<h2 class="text-2xl font-bold tracking-tight text-[#2f5c9b] dark:text-[#4b75b6]">Smart Rule Builder</h2>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center bg-surface-container-high px-4 py-2 rounded-full">
+<span class="material-symbols-outlined text-outline text-sm mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48 font-lexend" placeholder="Search rules..." type="text"/>
+</div>
+<button class="p-2 hover:bg-[#f2f3fd] dark:hover:bg-slate-800 rounded-full transition-colors">
+<span class="material-symbols-outlined text-[#2f5c9b]">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-primary-fixed-dim">
+<img alt="Parent Profile Switcher" class="w-full h-full object-cover" data-alt="Close up portrait of a smiling woman" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw2KGLJuCS4JRfQFL8-xIlKUm9E3zak7DYEKtDtyKJIy9kVCvti6UwLCrEyG3gctkTHJGelcX73tO2iLy7bKCoHDXnhLlQ-NKhcJM45Du4oDzS-jJKmfxOOMmgFKETM63hKXIQRc2UgpbOS0Hk_fEj5GgaB_APZVoP9pnmEMvGMfWD0B5mQM8Vqb7kUmJnP7Dwhqsfb62UwKXmTWx8tX8NOr7oN5FsxwqISvHCaYvbHPnsZTuZ4H-iqmwm3HO4CP243X8_MduZCBQ"/>
+</div>
+</div>
+</header>
+<!-- Content Area -->
+<div class="mt-20 px-6 max-w-5xl mx-auto space-y-8">
+<!-- Hero Bento Section: Smart Input -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Natural Language Input -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-8 rounded-lg shadow-sm border-none flex flex-col gap-6">
+<div>
+<h3 class="text-xl font-bold text-on-surface mb-2">Create a New Rule</h3>
+<p class="text-on-surface-variant body-md">Describe your routine in plain English. Our AI will handle the logic.</p>
+</div>
+<div class="relative">
+<textarea class="w-full h-40 p-6 bg-surface-container-high border-none rounded-lg focus:ring-2 focus:ring-primary text-on-surface placeholder:text-outline font-lexend text-lg leading-relaxed" placeholder="e.g., 'If Leo finishes his homework before 5pm, he gets 20 minutes of tablet time.'"></textarea>
+<div class="absolute bottom-4 right-4 flex gap-2">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-bold flex items-center gap-2 shadow-lg hover:scale-[1.02] transition-transform">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span>Generate Rule</span>
+</button>
+</div>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-wider block w-full mb-1">Try these:</span>
+<button class="px-4 py-2 bg-surface-container-low hover:bg-surface-container-high rounded-full text-xs font-medium text-primary transition-colors">"If meltdown, skip park"</button>
+<button class="px-4 py-2 bg-surface-container-low hover:bg-surface-container-high rounded-full text-xs font-medium text-primary transition-colors">"Morning routine bonus"</button>
+<button class="px-4 py-2 bg-surface-container-low hover:bg-surface-container-high rounded-full text-xs font-medium text-primary transition-colors">"Bedtime at 8pm sharp"</button>
+</div>
+</div>
+<!-- AI Logic Preview (Glassmorphism inspired) -->
+<div class="bg-primary/5 border border-primary/10 p-8 rounded-lg flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<h4 class="font-bold text-primary">AI Logic Preview</h4>
+</div>
+<div class="space-y-4">
+<div class="p-4 bg-white/60 backdrop-blur-md rounded-xl border border-white/40">
+<span class="text-[10px] font-bold text-primary-container uppercase tracking-widest block mb-1">Trigger</span>
+<p class="text-sm font-medium text-on-surface">Homework marked 'Complete'</p>
+</div>
+<div class="p-4 bg-white/60 backdrop-blur-md rounded-xl border border-white/40">
+<span class="text-[10px] font-bold text-primary-container uppercase tracking-widest block mb-1">Condition</span>
+<p class="text-sm font-medium text-on-surface">Time is before 17:00</p>
+</div>
+<div class="p-4 bg-primary text-white rounded-xl shadow-md">
+<span class="text-[10px] font-bold text-primary-fixed-dim uppercase tracking-widest block mb-1">Action</span>
+<p class="text-sm font-bold">Unlock 'Tablet Time' (20 min)</p>
+</div>
+</div>
+</div>
+<p class="text-[11px] text-on-surface-variant mt-6 italic">Logic generated based on Leo's Profile settings.</p>
+</div>
+</section>
+<!-- Active Rules List -->
+<section class="space-y-6">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="text-2xl font-bold text-on-surface">Active Rules for Leo</h3>
+<p class="text-on-surface-variant">Manage and monitor current behavioral routines.</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 bg-surface-container-high rounded-full">
+<span class="material-symbols-outlined text-on-surface-variant">filter_list</span>
+</button>
+<button class="p-2 bg-surface-container-high rounded-full">
+<span class="material-symbols-outlined text-on-surface-variant">sort</span>
+</button>
+</div>
+</div>
+<!-- Custom Rule Cards (No-Line Rule applied) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Rule Card 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg flex gap-4 items-start shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-12 h-12 rounded-xl bg-secondary-container flex items-center justify-center text-on-secondary-container shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-bold text-on-surface">Chore Completion Bonus</h4>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mb-4 leading-relaxed">If all morning chores are done by 9 AM, add 10 gold stars to the bank.</p>
+<div class="flex gap-2">
+<span class="px-2 py-1 bg-secondary-fixed-dim/20 text-on-secondary-fixed-variant text-[10px] font-bold rounded uppercase">Chore/Routine</span>
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant text-[10px] font-bold rounded uppercase">Daily</span>
+</div>
+</div>
+</div>
+<!-- Rule Card 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg flex gap-4 items-start shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed-dim/30 flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">warning</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-bold text-on-surface">Meltdown Mitigation</h4>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mb-4 leading-relaxed">If a level 3 meltdown is logged, automatically switch next activity to 'Quiet Time'.</p>
+<div class="flex gap-2">
+<span class="px-2 py-1 bg-tertiary-fixed-dim/20 text-on-tertiary-fixed-variant text-[10px] font-bold rounded uppercase">Health/Medication</span>
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant text-[10px] font-bold rounded uppercase">Triggered</span>
+</div>
+</div>
+</div>
+<!-- Rule Card 3 -->
+<div class="bg-surface-container-lowest p-6 rounded-lg flex gap-4 items-start shadow-sm hover:shadow-md transition-shadow group">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed-dim/30 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-bold text-on-surface">Homework Streak</h4>
+<div class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-secondary"></div>
+</div>
+</div>
+<p class="text-sm text-on-surface-variant mb-4 leading-relaxed">3 days of consistent homework completion unlocks 'Weekend Movie Night'.</p>
+<div class="flex gap-2">
+<span class="px-2 py-1 bg-primary-fixed-dim/20 text-on-primary-fixed-variant text-[10px] font-bold rounded uppercase">School/Learning</span>
+<span class="px-2 py-1 bg-surface-container-low text-on-surface-variant text-[10px] font-bold rounded uppercase">Streak</span>
+</div>
+</div>
+</div>
+<!-- Rule Card 4 (Empty State / Placeholder) -->
+<div class="bg-surface-container-low p-6 rounded-lg border-2 border-dashed border-outline-variant flex flex-col items-center justify-center text-center gap-2 opacity-60 hover:opacity-100 transition-opacity cursor-pointer">
+<span class="material-symbols-outlined text-3xl text-outline">add_circle</span>
+<p class="font-bold text-on-surface-variant">Add another rule</p>
+</div>
+</div>
+</section>
+</div>
+<!-- BottomNavBar (Mobile Only execution) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 h-20 bg-[#ffffff]/80 dark:bg-slate-900/80 backdrop-blur-2xl rounded-t-[3rem] shadow-[0_-4px_24px_0_rgba(25,27,34,0.06)]">
+<a class="flex flex-col items-center justify-center text-[#414751] dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-lexend text-[11px] font-medium tracking-wide">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#414751] dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">event_repeat</span>
+<span class="font-lexend text-[11px] font-medium tracking-wide">Schedule</span>
+</a>
+<!-- Active Center Button Logic -->
+<a class="flex flex-col items-center justify-center bg-[#2f5c9b] text-white rounded-full w-14 h-14 -mt-10 shadow-lg" href="#">
+<span class="material-symbols-outlined">rule</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#414751] dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">edit_note</span>
+<span class="font-lexend text-[11px] font-medium tracking-wide">Log</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#414751] dark:text-slate-400" href="#">
+<span class="material-symbols-outlined">child_care</span>
+<span class="font-lexend text-[11px] font-medium tracking-wide">Child View</span>
+</a>
+</nav>
+</main>
+</body></html>

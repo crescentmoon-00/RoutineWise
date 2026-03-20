@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RoutineWise | Profile Management</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface": "#faf8ff",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#ededf7",
+                        "on-secondary-container": "#1e713b",
+                        "secondary": "#186c37",
+                        "on-secondary-fixed-variant": "#005225",
+                        "primary-fixed-dim": "#a9c8ff",
+                        "on-primary-fixed": "#001b3d",
+                        "surface-container-low": "#f2f3fd",
+                        "primary-fixed": "#d6e3ff",
+                        "primary": "#2f5c9b",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#966e00",
+                        "on-secondary-fixed": "#00210b",
+                        "outline-variant": "#c1c7d3",
+                        "on-tertiary-container": "#fffbff",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#ffdea2",
+                        "on-surface": "#191b22",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e1e2ec",
+                        "surface-tint": "#325f9e",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#f6be3c",
+                        "on-tertiary-fixed": "#261900",
+                        "surface-dim": "#d9d9e3",
+                        "surface-container-high": "#e7e7f1",
+                        "primary-container": "#4b75b6",
+                        "on-primary-container": "#fefcff",
+                        "on-background": "#191b22",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#414751",
+                        "inverse-surface": "#2e3038",
+                        "tertiary": "#775700",
+                        "secondary-container": "#a0f2af",
+                        "on-tertiary-fixed-variant": "#5c4200",
+                        "inverse-primary": "#a9c8ff",
+                        "background": "#faf8ff",
+                        "outline": "#717783",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#124684",
+                        "secondary-fixed": "#a3f5b2",
+                        "inverse-on-surface": "#f0f0fa",
+                        "secondary-fixed-dim": "#87d898",
+                        "surface-variant": "#e1e2ec",
+                        "surface-bright": "#faf8ff"
+                    },
+                    fontFamily: {
+                        "headline": ["Lexend"],
+                        "body": ["Lexend"],
+                        "label": ["Lexend"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Lexend', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-primary-fixed-dim">
+<!-- TopAppBar Execution -->
+<header class="w-full top-0 sticky z-50 bg-[#faf8ff] dark:bg-slate-950 flex justify-between items-center px-6 py-4 max-w-full mx-auto">
+<div class="flex items-center gap-4">
+<span class="text-2xl font-bold text-[#2f5c9b] dark:text-blue-400 font-lexend tracking-tight">RoutineWise</span>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 text-[#414751] dark:text-slate-400 hover:bg-[#f2f3fd] dark:hover:bg-slate-800 transition-colors rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-[#414751] dark:text-slate-400 hover:bg-[#f2f3fd] dark:hover:bg-slate-800 transition-colors rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<div class="flex min-h-screen">
+<!-- SideNavBar Execution -->
+<aside class="hidden md:flex h-screen w-64 fixed left-0 top-0 border-r-0 flex-col py-8 bg-[#faf8ff] dark:bg-slate-950 shadow-xl shadow-slate-200/50 dark:shadow-none z-40">
+<div class="px-6 mb-8">
+<h2 class="text-xl font-bold text-[#2f5c9b]">Parent Portal</h2>
+<p class="text-sm text-[#414751] dark:text-slate-400">Managing 2 children</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center text-[#414751] dark:text-slate-400 px-4 py-3 mx-2 my-1 hover:bg-[#e7e7f1] dark:hover:bg-slate-800 rounded-full transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined mr-3">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center text-[#414751] dark:text-slate-400 px-4 py-3 mx-2 my-1 hover:bg-[#e7e7f1] dark:hover:bg-slate-800 rounded-full transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined mr-3">calendar_today</span>
+<span>Schedules</span>
+</a>
+<a class="flex items-center bg-[#2f5c9b] text-white rounded-full mx-2 my-1 px-4 py-3 transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined mr-3">face</span>
+<span>Child Profiles</span>
+</a>
+<a class="flex items-center text-[#414751] dark:text-slate-400 px-4 py-3 mx-2 my-1 hover:bg-[#e7e7f1] dark:hover:bg-slate-800 rounded-full transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined mr-3">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="px-4 mb-6">
+<button class="w-full py-4 bg-primary text-on-primary rounded-full font-semibold flex items-center justify-center gap-2 active:scale-95 duration-200">
+<span class="material-symbols-outlined">add</span>
+                    Add Child
+                </button>
+</div>
+<div class="mt-auto border-t border-outline-variant/15 pt-4">
+<a class="flex items-center text-[#414751] dark:text-slate-400 px-4 py-3 mx-2 my-1 hover:bg-[#e7e7f1] dark:hover:bg-slate-800 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined mr-3">help</span>
+<span>Help</span>
+</a>
+<a class="flex items-center text-[#414751] dark:text-slate-400 px-4 py-3 mx-2 my-1 hover:bg-[#e7e7f1] dark:hover:bg-slate-800 rounded-full transition-all" href="#">
+<span class="material-symbols-outlined mr-3">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 p-6 md:p-12 pb-32">
+<div class="max-w-5xl mx-auto">
+<div class="mb-10">
+<h1 class="text-4xl font-extrabold text-on-surface tracking-tight mb-2">Profiles</h1>
+<p class="text-on-surface-variant text-lg">Personalize and manage schedules for each family member.</p>
+</div>
+<!-- Bento Grid Layout for Profiles -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Profile Card 1 -->
+<div class="group relative bg-surface-container-lowest rounded-lg p-8 shadow-sm transition-all hover:shadow-xl hover:-translate-y-1">
+<div class="absolute top-6 right-6">
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-24 h-24 rounded-full bg-primary-fixed-dim p-1 mb-6">
+<img alt="" class="w-full h-full object-cover rounded-full" data-alt="Portrait of a smiling young boy with curly hair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOqIxYE2MpSQGSiVrsK5LDjmOB6-n-8iO5wPDiGIItff2xgiUSK-9DSVhmTqRFXs6Z_yAzTWkmYxEJGl_1ea5YW4Z8qCM2lL3OkWA-ACeMBbPoFztudAVLcLhPmkNUCijgHD0YQDIEDqgAHignRepcSzzhCNL69JhOesvxzA5Y2dA0lcaUhTamtACclCr7p0oJTeIjjKsiHo1CxrerxXRQrnfuiLECvucfyXKxEYgwZ_SdYf1mfTRW-oLcJnrM_DkduFDCDLzmaYE"/>
+</div>
+<h3 class="text-2xl font-bold text-on-surface mb-1">Leo</h3>
+<p class="text-on-surface-variant mb-4">6 years old</p>
+<div class="inline-flex items-center px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-sm font-medium mb-8">
+<span class="material-symbols-outlined text-[18px] mr-1.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                                Morning Routine Active
+                            </div>
+<button class="w-full py-3 px-6 bg-surface-container-high hover:bg-primary-fixed text-primary font-semibold rounded-full transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">edit_calendar</span>
+                                View Schedule
+                            </button>
+</div>
+</div>
+<!-- Profile Card 2 -->
+<div class="group relative bg-surface-container-lowest rounded-lg p-8 shadow-sm transition-all hover:shadow-xl hover:-translate-y-1">
+<div class="absolute top-6 right-6">
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-24 h-24 rounded-full bg-tertiary-fixed-dim p-1 mb-6">
+<img alt="" class="w-full h-full object-cover rounded-full" data-alt="Portrait of a young girl with braids smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs1BmXxCIdc2OnqeWUP63w5JCErLFCm27GDxEcSmI6BphHX3mlXovA6WRDcVCMZCAr13UdJx4xTcJz4fptfzFCxnlXuLUDWvyiyYs0XPUnJMS8YQr2Pm8NznQmCAOFzAYUlMzx2y9tbCb3aNIup9jAdTNvDFpcmmUY6fWxFvFxa-mZeIwUVHX_uEaNi0mGwh5Ha1KRviJNdY0ou19Gnthy6y0p1e8cT86X5CIrdgJM2HtsXyXVgQv6az--ZQURZM5SLgjjsxLW17w"/>
+</div>
+<h3 class="text-2xl font-bold text-on-surface mb-1">Maya</h3>
+<p class="text-on-surface-variant mb-4">9 years old</p>
+<div class="inline-flex items-center px-4 py-1.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant text-sm font-medium mb-8">
+<span class="material-symbols-outlined text-[18px] mr-1.5">hourglass_empty</span>
+                                Transitioning (10m)
+                            </div>
+<button class="w-full py-3 px-6 bg-surface-container-high hover:bg-primary-fixed text-primary font-semibold rounded-full transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">edit_calendar</span>
+                                View Schedule
+                            </button>
+</div>
+</div>
+<!-- Add New Card -->
+<button class="group relative bg-surface-container-low border-2 border-dashed border-outline-variant/30 rounded-lg p-8 flex flex-col items-center justify-center text-center hover:bg-surface-container transition-colors">
+<div class="w-20 h-20 rounded-full bg-surface-container-high flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-4xl">add</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface">Add Profile</h3>
+<p class="text-on-surface-variant max-w-[160px] mx-auto mt-2">Create a new routine space for another child.</p>
+</button>
+</div>
+<!-- Stats Section - Data Rich Editorial -->
+<section class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-primary text-on-primary p-8 rounded-lg relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="text-sm font-bold uppercase tracking-widest opacity-80 mb-4">Weekly Engagement</h4>
+<div class="flex items-end gap-2 mb-6">
+<span class="text-5xl font-extrabold">92%</span>
+<span class="text-lg opacity-80 pb-1">completion rate</span>
+</div>
+<p class="text-on-primary-container max-w-sm">Consistency is improving! Both profiles show a 15% increase in routine adherence this week.</p>
+</div>
+<!-- Abstract Background Decoration -->
+<div class="absolute -right-10 -bottom-10 w-48 h-48 bg-primary-container/30 rounded-full blur-3xl"></div>
+</div>
+<div class="bg-surface-container-high p-8 rounded-lg flex flex-col justify-center">
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-primary text-3xl">insights</span>
+<h4 class="text-xl font-bold">Quick Insights</h4>
+</div>
+<ul class="space-y-4">
+<li class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-secondary"></div>
+<span class="text-on-surface-variant">Leo completed "Teeth Brushing" 5 days in a row.</span>
+</li>
+<li class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-tertiary"></div>
+<span class="text-on-surface-variant">Maya needs more time for "Morning Dressing".</span>
+</li>
+</ul>
+</div>
+</section>
+</div>
+</main>
+</div>
+<!-- BottomNavBar Execution -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center px-6 pb-safe pt-2 bg-[#faf8ff]/80 dark:bg-slate-950/80 backdrop-blur-xl border-t border-[#c1c7d3]/15 shadow-[0_-4px_24px_rgba(25,27,34,0.06)] z-50">
+<a class="flex flex-col items-center justify-center text-[#414751] dark:text-slate-400 py-4 hover:text-[#2f5c9b] transition-transform duration-300 active:scale-90" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-lexend text-[12px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#414751] dark:text-slate-400 py-4 hover:text-[#2f5c9b] transition-transform duration-300 active:scale-90" href="#">
+<span class="material-symbols-outlined">edit_calendar</span>
+<span class="font-lexend text-[12px] font-medium">Edit</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-[#2f5c9b] text-white rounded-full w-14 h-14 -mt-6 shadow-lg shadow-blue-900/20 active:scale-90 transition-transform duration-300" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="font-lexend text-[10px] font-medium">Profiles</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#414751] dark:text-slate-400 py-4 hover:text-[#2f5c9b] transition-transform duration-300 active:scale-90" href="#">
+<span class="material-symbols-outlined">settings_accessibility</span>
+<span class="font-lexend text-[12px] font-medium">Settings</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,35 @@
+Project Name: RoutineWise (MVP) Version: 1.0 Platform: Responsive Web Application (PWA) Backend: Node.js (Express) Database: MongoDB Target Audience: Parents of young neurodivergent children (Ages 2-8)
+1. Executive Summary
+RoutineWise is a responsive web app designed to reduce anxiety for neurodivergent children and cognitive load for parents. It combines a visual schedule with an AI-powered "Smart Rule Builder." Parents describe routines in plain English, and the system generates dynamic schedules that adapt to daily variables like sleep and mood. The MVP prioritizes speed, reliability via automated testing, and accessibility.
+2. Technical Stack
+Frontend: React.js or Vue.js (Responsive/Mobile-First).
+Backend: Node.js with Express.js (Local development friendly).
+Database: MongoDB (NoSQL) for flexible, nested routine data.
+Testing: Jest (for backend logic) & React Testing Library (for frontend components).
+Deployment: Dockerized containers for easy cloud deployment later.
+3. Functional Requirements
+3.1 User Management & Profiles
+Multi-Child Support: Parent dashboard allows switching between multiple child profiles.
+Role Views:
+Parent View: Dashboard, Quick Log, Rule Builder.
+Child View: Full-screen, image-based timeline (locks screen orientation).
+3.2 The Visual Schedule (Child View)
+Visual Assets: Pre-loaded library of free SVG icons (OpenMoji) + Parent photo uploads.
+Interaction: Large touch targets. Tapping a task marks it "Complete" with visual feedback (animation).
+Dynamic Updates: Schedule updates in real-time when the parent modifies rules or logs an event.
+3.3 The "Smart Rule Builder" (AI Feature)
+Natural Language Input: Text input field for parents (e.g., "If he has a meltdown, cancel the park trip").
+AI Processing: Node.js backend sends prompt to LLM API; receives structured JSON logic.
+Validation Layer: System validates AI output before saving to MongoDB.
+Manual Toggle: Option to toggle rules On/Off.
+3.4 Quick Log & Tracking
+One-Tap Logging: Large buttons for Meltdowns, Mood, Sleep, and Food.
+Timestamp: Auto-generated, editable by parent.
+3.5 Reporting & Export
+PDF Generator: Backend generates a summarized PDF of the week's logs and schedule adherence.
+Download: Direct download via the browser.
+4. Non-Functional Requirements
+4.1 Performance & Accessibility
+Load Time: < 2 seconds on 4G.
+Offline Mode: Service Workers cache the schedule for offline viewing (PWA standard).
+Accessibility: WCAG 2.1 AA compliance (High contrast, minimal animations option).
