@@ -1,5 +1,5 @@
 import { useAuth } from '@/contexts/AuthContext';
-import { notifications, account_circle, logout, settings } from '@/icons';
+import { notifications, account_circle, logout as logoutIcon, settings } from '@/icons';
 import { useState } from 'react';
 
 export const TopAppBar = () => {
@@ -58,7 +58,7 @@ export const TopAppBar = () => {
             onClick={handleLogoutClick}
             className="w-full px-4 py-2 text-left text-sm text-error hover:bg-error_container/20 flex items-center gap-2"
           >
-            <span className="material-symbols-outlined">{logout}</span>
+            <span className="material-symbols-outlined">{logoutIcon}</span>
             Logout
           </button>
         </div>

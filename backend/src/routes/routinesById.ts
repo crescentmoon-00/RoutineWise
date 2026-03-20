@@ -2,8 +2,6 @@ import { Router } from 'express';
 import * as routineController from '../controllers/routineController';
 import { auth } from '../middleware/auth';
 import {
-  childIdValidation,
-  routineValidation,
   routineIdValidation,
   handleValidationErrors,
 } from '../middleware/validation';
@@ -14,37 +12,12 @@ const router = Router();
 router.use(auth);
 
 /**
- * @route   POST /api/children/:childId/routines
- * @desc    Create a new routine for a child
- * @access  Private
- */
-router.post(
-  '/:childId/routines',
-  childIdValidation,
-  routineValidation,
-  handleValidationErrors,
-  routineController.createRoutine
-);
-
-/**
- * @route   GET /api/children/:childId/routines
- * @desc    Get all routines for a child
- * @access  Private
- */
-router.get(
-  '/:childId/routines',
-  childIdValidation,
-  handleValidationErrors,
-  routineController.getRoutines
-);
-
-/**
  * @route   GET /api/routines/:routineId
  * @desc    Get a single routine
  * @access  Private
  */
 router.get(
-  '/routines/:routineId',
+  '/:routineId',
   routineIdValidation,
   handleValidationErrors,
   routineController.getRoutine
@@ -56,7 +29,7 @@ router.get(
  * @access  Private
  */
 router.patch(
-  '/routines/:routineId',
+  '/:routineId',
   routineIdValidation,
   handleValidationErrors,
   routineController.updateRoutine
@@ -68,7 +41,7 @@ router.patch(
  * @access  Private
  */
 router.delete(
-  '/routines/:routineId',
+  '/:routineId',
   routineIdValidation,
   handleValidationErrors,
   routineController.deleteRoutine
@@ -80,7 +53,7 @@ router.delete(
  * @access  Private
  */
 router.post(
-  '/routines/:routineId/reorder',
+  '/:routineId/reorder',
   routineIdValidation,
   handleValidationErrors,
   routineController.reorderSteps

@@ -1,7 +1,9 @@
 import { useAuth } from '@/contexts/AuthContext';
 import { useApp } from '@/contexts/AppContext';
 import { useEffect, useState } from 'react';
-import { home, schedule, bed, restaurant, sentiment_satisfied, add } from '@/icons';
+import { useNavigate } from 'react-router-dom';
+import { childService } from '@/services/childService';
+import { bed, restaurant, sentiment_satisfied, add } from '@/icons';
 
 interface QuickLog {
   type: 'sleep' | 'mood' | 'food' | 'medication';
@@ -21,27 +23,17 @@ const quickLogs: QuickLog[] = [
 export const DashboardPage = () => {
   const { user } = useAuth();
   const { currentChild, setCurrentChild } = useApp();
+  const navigate = useNavigate();
   const [children, setChildren] = useState<any[]>([]);
 
   useEffect(() => {
     // Fetch children when component mounts
     const fetchChildren = async () => {
       try {
-        const token = localStorage.getItem('token');
-        if (!token) return;
-
-        const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
-        const response = await fetch(`${API_BASE}/children`, {
-          headers: {
-            'Authorization': `Bearer ${token}`,
-          },
-        });
-        if (response.ok) {
-          const data = await response.json();
-          setChildren(data.children || []);
-          if (data.children?.length > 0 && !currentChild) {
-            setCurrentChild(data.children[0]);
-          }
+        const data = await childService.getChildren();
+        setChildren(data);
+        if (data.length > 0 && !currentChild) {
+          setCurrentChild(data[0]);
         }
       } catch (error) {
         console.error('Failed to fetch children:', error);
@@ -257,7 +249,10 @@ export const DashboardPage = () => {
           <p className="text-on-surface-variant mb-6 max-w-md mx-auto">
             Create your first child profile to start tracking routines and activities.
           </p>
-          <button className="px-6 py-3 bg-primary text-on-primary rounded-full font-bold hover:bg-primary_container transition-colors">
+          <button
+            onClick={() => navigate('/profiles/new')}
+            className="px-6 py-3 bg-primary text-on-primary rounded-full font-bold hover:bg-primary_container transition-colors"
+          >
             Create Child Profile
           </button>
         </div>

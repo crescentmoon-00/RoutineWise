@@ -1,29 +1,29 @@
 import { apiClient } from './api';
-import { ChildProfile, Routine, ActivityLog, Rule } from '@/types';
+import type { ChildProfile, Routine, ActivityLog, Rule } from '@/types';
 
 export const childService = {
   // Get all children for parent
   getChildren: async (): Promise<ChildProfile[]> => {
-    const response = await apiClient.get<ChildProfile[]>('/children');
-    return response.data;
+    const response: any = await apiClient.get('/children');
+    return response.children || [];
   },
 
   // Get single child profile
   getChild: async (childId: string): Promise<ChildProfile> => {
-    const response = await apiClient.get<ChildProfile>(`/children/${childId}`);
-    return response.data;
+    const response: any = await apiClient.get(`/children/${childId}`);
+    return response.child;
   },
 
   // Create child profile
   createChild: async (childData: Partial<ChildProfile>): Promise<ChildProfile> => {
-    const response = await apiClient.post<ChildProfile>('/children', childData);
-    return response.data;
+    const response: any = await apiClient.post('/children', childData);
+    return response.child;
   },
 
   // Update child profile
   updateChild: async (childId: string, childData: Partial<ChildProfile>): Promise<ChildProfile> => {
-    const response = await apiClient.put<ChildProfile>(`/children/${childId}`, childData);
-    return response.data;
+    const response: any = await apiClient.put(`/children/${childId}`, childData);
+    return response.child;
   },
 
   // Delete child profile
@@ -33,20 +33,20 @@ export const childService = {
 
   // Get routines for child
   getRoutines: async (childId: string): Promise<Routine[]> => {
-    const response = await apiClient.get<Routine[]>(`/children/${childId}/routines`);
-    return response.data;
+    const response: any = await apiClient.get(`/children/${childId}/routines`);
+    return response.routines || [];
   },
 
   // Create routine
   createRoutine: async (childId: string, routine: Partial<Routine>): Promise<Routine> => {
-    const response = await apiClient.post<Routine>(`/children/${childId}/routines`, routine);
-    return response.data;
+    const response: any = await apiClient.post(`/children/${childId}/routines`, routine);
+    return response.routine;
   },
 
   // Update routine
   updateRoutine: async (childId: string, routineId: string, routine: Partial<Routine>): Promise<Routine> => {
-    const response = await apiClient.put<Routine>(`/children/${childId}/routines/${routineId}`, routine);
-    return response.data;
+    const response: any = await apiClient.put(`/children/${childId}/routines/${routineId}`, routine);
+    return response.routine;
   },
 
   // Delete routine
@@ -59,20 +59,20 @@ export const childService = {
     const params = new URLSearchParams();
     if (startDate) params.append('startDate', startDate.toISOString());
     if (endDate) params.append('endDate', endDate.toISOString());
-    const response = await apiClient.get<ActivityLog[]>(`/children/${childId}/logs?${params}`);
-    return response.data;
+    const response: any = await apiClient.get(`/children/${childId}/logs?${params}`);
+    return response.logs || [];
   },
 
   // Create log entry
   createLog: async (childId: string, log: Partial<ActivityLog>): Promise<ActivityLog> => {
-    const response = await apiClient.post<ActivityLog>(`/children/${childId}/logs`, log);
-    return response.data;
+    const response: any = await apiClient.post(`/children/${childId}/logs`, log);
+    return response.log;
   },
 
   // Update log entry
   updateLog: async (childId: string, logId: string, log: Partial<ActivityLog>): Promise<ActivityLog> => {
-    const response = await apiClient.put<ActivityLog>(`/children/${childId}/logs/${logId}`, log);
-    return response.data;
+    const response: any = await apiClient.put(`/children/${childId}/logs/${logId}`, log);
+    return response.log;
   },
 
   // Delete log entry
@@ -82,20 +82,20 @@ export const childService = {
 
   // Get rules for child
   getRules: async (childId: string): Promise<Rule[]> => {
-    const response = await apiClient.get<Rule[]>(`/children/${childId}/rules`);
-    return response.data;
+    const response: any = await apiClient.get(`/children/${childId}/rules`);
+    return response.rules || [];
   },
 
   // Create rule
   createRule: async (childId: string, rule: Partial<Rule>): Promise<Rule> => {
-    const response = await apiClient.post<Rule>(`/children/${childId}/rules`, rule);
-    return response.data;
+    const response: any = await apiClient.post(`/children/${childId}/rules`, rule);
+    return response.rule;
   },
 
   // Update rule
   updateRule: async (childId: string, ruleId: string, rule: Partial<Rule>): Promise<Rule> => {
-    const response = await apiClient.put<Rule>(`/children/${childId}/rules/${ruleId}`, rule);
-    return response.data;
+    const response: any = await apiClient.put(`/children/${childId}/rules/${ruleId}`, rule);
+    return response.rule;
   },
 
   // Delete rule

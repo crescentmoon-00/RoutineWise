@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useApp } from '@/contexts/AppContext';
-import { check_circle, hourglass_empty, add, edit } from '@/icons';
+import { childService } from '@/services/childService';
+import { add, edit } from '@/icons';
 
 interface Child {
   _id: string;
@@ -9,7 +10,7 @@ interface Child {
   dateOfBirth: string;
   avatar?: string;
   status: 'active' | 'transitioning';
-  notes: string;
+  notes?: string;
 }
 
 export const ProfilesPage = () => {
@@ -25,22 +26,8 @@ export const ProfilesPage = () => {
 
   const fetchChildren = async () => {
     try {
-      const token = localStorage.getItem('token');
-      if (!token) {
-        setIsLoading(false);
-        return;
-      }
-
-      const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
-      const response = await fetch(`${API_BASE}/children`, {
-        headers: {
-          'Authorization': `Bearer ${token}`,
-        },
-      });
-      if (response.ok) {
-        const data = await response.json();
-        setChildren(data.children || []);
-      }
+      const data = await childService.getChildren();
+      setChildren(data);
     } catch (error) {
       console.error('Failed to fetch children:', error);
     } finally {

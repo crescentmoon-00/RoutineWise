@@ -6,8 +6,8 @@ import { connectDB } from './config/database';
 // Import routes
 import authRoutes from './routes/auth';
 import childRoutes from './routes/children';
-import routineRoutes from './routes/routines';
-import activityLogRoutes from './routes/activityLogs';
+import routinesByIdRoutes from './routes/routinesById';
+import logsByIdRoutes from './routes/logsById';
 
 // Load environment variables
 dotenv.config();
@@ -39,8 +39,8 @@ app.get('/api/health', (req, res) => {
 // API Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/children', childRoutes);
-app.use('/api/routines', routineRoutes);
-app.use('/api', activityLogRoutes);
+app.use('/api/routines', routinesByIdRoutes);
+app.use('/api/logs', logsByIdRoutes);
 
 // 404 handler - must be after all routes
 app.use((req: express.Request, res: express.Response) => {

@@ -2,23 +2,23 @@
 export interface User {
   _id: string;
   email: string;
-  password?: string;
-  children: string[];
-  createdAt: Date;
-  updatedAt: Date;
+  firstName: string;
+  lastName: string;
+  subscriptionTier: 'free' | 'premium';
 }
 
 export interface ChildProfile {
   _id: string;
-  parentId: string;
+  parent: string;
   name: string;
-  age: number;
-  ageMode: 'explorer' | 'navigator';
-  sensoryProfile: 'high_alert' | 'low_alert' | 'balanced';
-  photoUrl?: string;
-  routines: Routine[];
-  customRules: Rule[];
-  isActive: boolean;
+  dateOfBirth: string;
+  avatar?: string;
+  status: 'active' | 'transitioning';
+  notes?: string;
+  routines?: any[];
+  logs?: any[];
+  rules?: any[];
+  age?: number;
   createdAt: Date;
   updatedAt: Date;
 }

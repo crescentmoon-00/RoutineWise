@@ -6,6 +6,7 @@ import { ForgotPasswordPage } from '@/pages/auth/ForgotPasswordPage';
 import { ParentLayout } from '@/layouts/ParentLayout';
 import { DashboardPage } from '@/pages/parent/DashboardPage';
 import { ProfilesPage } from '@/pages/parent/ProfilesPage';
+import { ChildFormPage } from '@/pages/parent/ChildFormPage';
 import { SettingsPage } from '@/pages/parent/SettingsPage';
 
 export const AppRoutes = () => {
@@ -22,6 +23,8 @@ export const AppRoutes = () => {
           <Route path="/" element={<DashboardPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/profiles" element={<ProfilesPage />} />
+          <Route path="/profiles/new" element={<ChildFormPage />} />
+          <Route path="/profiles/:childId/edit" element={<ChildFormPage />} />
           <Route path="/settings" element={<SettingsPage />} />
           {/* More routes will be added in future phases */}
         </Route>
